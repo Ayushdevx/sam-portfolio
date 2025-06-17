@@ -266,84 +266,247 @@
   animation: float 6s ease-in-out infinite 2s;
 }
 
-/* Hero section specific styles for better visibility */
+/* Advanced Hero section styles for modern, interactive design */
 .hero-section {
+  background: linear-gradient(135deg, 
+    #150427 0%, 
+    #1d0636 25%, 
+    #250845 50%, 
+    #2d0a54 75%, 
+    #150427 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
 }
 
-/* Ensure hero content is always visible */
-.hero-content {
-  position: relative;
-  z-index: 20;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(1px);
-  border-radius: 10px;
-  padding: 20px;
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-/* Canvas container styling */
-.canvas-container {
+/* Enhanced text effects */
+.hero-text {
+  text-shadow: 
+    0 0 10px rgba(120, 80, 220, 0.5),
+    0 0 20px rgba(120, 80, 220, 0.3),
+    0 0 40px rgba(120, 80, 220, 0.1);
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+/* Glassmorphism effect for hero content */
+.hero-content {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content::before {
+  content: '';
   position: absolute;
   top: 0;
-  left: 0;
+  left: -100%;
   width: 100%;
   height: 100%;
-  z-index: 5;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shimmer 3s infinite;
 }
 
-/* Profile picture enhancements */
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Profile picture enhanced effects */
 .profile-picture {
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.3));
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: 
+    drop-shadow(0 20px 25px rgba(0, 0, 0, 0.3))
+    drop-shadow(0 0 30px rgba(120, 80, 220, 0.4));
+  position: relative;
 }
 
-.profile-picture:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.4));
+.profile-picture::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: conic-gradient(from 0deg, #7850dc, #ff6b9d, #7850dc);
+  border-radius: 50%;
+  z-index: -1;
+  animation: rotate-border 3s linear infinite;
+}
+
+@keyframes rotate-border {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Scroll indicator improvements */
 .scroll-indicator {
-  backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
-/* Text shadows for better readability */
-.hero-text {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+.scroll-indicator:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(120, 80, 220, 0.4);
 }
 
-/* Gradient overlays */
+/* Interactive elements */
+.hero-section .group:hover .profile-picture {
+  transform: scale(1.05) rotate(2deg);
+  filter: 
+    drop-shadow(0 25px 35px rgba(0, 0, 0, 0.4))
+    drop-shadow(0 0 40px rgba(120, 80, 220, 0.6));
+}
+
+/* Floating animations */
+.hero-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.hero-float-delayed {
+  animation: float 6s ease-in-out infinite 2s;
+}
+
+/* Particle system enhancements */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(120, 80, 220, 0.8) 0%, transparent 70%);
+  animation: particle-float 8s infinite ease-in-out;
+}
+
+@keyframes particle-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-30px) rotate(90deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-60px) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-30px) rotate(270deg);
+    opacity: 0.8;
+  }
+}
+
+/* Enhanced gradient backgrounds */
 .gradient-overlay {
   background: linear-gradient(135deg, 
-    rgba(21, 4, 39, 0.9) 0%, 
-    rgba(29, 6, 54, 0.8) 25%, 
-    rgba(37, 8, 69, 0.7) 50%, 
-    rgba(45, 10, 84, 0.8) 75%, 
-    rgba(21, 4, 39, 0.9) 100%);
+    rgba(21, 4, 39, 0.95) 0%, 
+    rgba(29, 6, 54, 0.9) 15%, 
+    rgba(37, 8, 69, 0.8) 30%, 
+    rgba(45, 10, 84, 0.85) 45%,
+    rgba(53, 12, 99, 0.9) 60%, 
+    rgba(45, 10, 84, 0.85) 75%,
+    rgba(37, 8, 69, 0.8) 90%, 
+    rgba(21, 4, 39, 0.95) 100%);
+  background-size: 400% 400%;
+  animation: gradient-flow 20s ease infinite;
 }
 
-/* Ensure all hero elements are visible on any background */
-.hero-section * {
-  position: relative;
+@keyframes gradient-flow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  33% {
+    background-position: 100% 0%;
+  }
+  66% {
+    background-position: 0% 100%;
+  }
 }
 
-.hero-section .absolute {
-  position: absolute !important;
+/* Button hover effects */
+.btn-primary {
+  background: linear-gradient(45deg, #7850dc, #ff6b9d);
+  background-size: 200% 200%;
+  animation: gradient-shift-btn 3s ease infinite;
+  transition: all 0.3s ease;
 }
 
-/* Loading fallback styling */
-.loading-fallback {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #150427, #1d0636, #250845, #2d0a54);
-  color: white;
-  text-align: center;
+.btn-primary:hover {
+  box-shadow: 0 10px 30px rgba(120, 80, 220, 0.4);
+  transform: translateY(-2px);
+}
+
+@keyframes gradient-shift-btn {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Text gradient animations */
+.text-gradient {
+  background: linear-gradient(45deg, #7850dc, #ff6b9d, #00d4ff, #7850dc);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-gradient-shift 4s ease infinite;
+}
+
+@keyframes text-gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Responsive enhancements */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .hero-text {
+    text-shadow: 
+      0 0 8px rgba(120, 80, 220, 0.6),
+      0 0 16px rgba(120, 80, 220, 0.4);
+  }
 }
