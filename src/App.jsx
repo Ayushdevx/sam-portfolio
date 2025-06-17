@@ -9,25 +9,42 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { StarsCanvas } from "./components/canvas";
 import HireMe from "./components/HireMe";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-          <Navbar />
-          <Hero />
-        </div>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        <div className="relative z-0">
-          <Contact />
-          {/* <StarsCanvas /> */}
-        </div>
-        <HireMe />
-        <Footer />
+        <ErrorBoundary>
+          <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+            <Navbar />
+            <Hero />
+          </div>
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <About />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Experience />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Tech />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Works />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <div className="relative z-0">
+            <Contact />
+            {/* <StarsCanvas /> */}
+          </div>
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <HireMe />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Footer />
+        </ErrorBoundary>
       </div>
     </BrowserRouter>
   );

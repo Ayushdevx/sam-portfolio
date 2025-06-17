@@ -202,3 +202,148 @@
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
 }
+
+/* Grid pattern for animated background */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+/* Enhanced hero animations */
+.hero-section {
+  background: linear-gradient(135deg, 
+    #150427 0%, 
+    #1d0636 25%, 
+    #250845 50%, 
+    #2d0a54 75%, 
+    #150427 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating animations for hero elements */
+.hero-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.hero-float-delayed {
+  animation: float 6s ease-in-out infinite 2s;
+}
+
+/* Hero section specific styles for better visibility */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Ensure hero content is always visible */
+.hero-content {
+  position: relative;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(1px);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Canvas container styling */
+.canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+/* Profile picture enhancements */
+.profile-picture {
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.3));
+}
+
+.profile-picture:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.4));
+}
+
+/* Scroll indicator improvements */
+.scroll-indicator {
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Text shadows for better readability */
+.hero-text {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Gradient overlays */
+.gradient-overlay {
+  background: linear-gradient(135deg, 
+    rgba(21, 4, 39, 0.9) 0%, 
+    rgba(29, 6, 54, 0.8) 25%, 
+    rgba(37, 8, 69, 0.7) 50%, 
+    rgba(45, 10, 84, 0.8) 75%, 
+    rgba(21, 4, 39, 0.9) 100%);
+}
+
+/* Ensure all hero elements are visible on any background */
+.hero-section * {
+  position: relative;
+}
+
+.hero-section .absolute {
+  position: absolute !important;
+}
+
+/* Loading fallback styling */
+.loading-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #150427, #1d0636, #250845, #2d0a54);
+  color: white;
+  text-align: center;
+}

@@ -12,6 +12,7 @@ const CanvasLoader = () => {
         alignItems: "center",
         flexDirection: "column",
         marginTop: 50,
+        zIndex: 10,
       }}
     >
       <span className="canvas-loader"></span>
@@ -21,9 +22,10 @@ const CanvasLoader = () => {
           color: "#F1F1F1",
           fontWeight: 800,
           marginTop: 40,
+          textShadow: "2px 2px 4px rgba(0,0,0,0.8)",
         }}
       >
-        {progress.toFixed(2)}%
+        Loading 3D Model... {progress.toFixed(2)}%
       </p>
     </Html>
   );
